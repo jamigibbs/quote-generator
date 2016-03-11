@@ -42,7 +42,8 @@ body {
 	2.0 Quote
 --------------------------------------------------------------*/
 #quote-bg {
-  background: white;
+  background: url("../img/quote.png") no-repeat;
+  background-color: white;
   position: relative;
   width: 420px;
   min-height: 200px;
