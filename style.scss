@@ -4,11 +4,18 @@ html, body {
 body {
   font-family: 'Merriweather', serif;
   background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #D8E9F0 , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #D8E9F0 , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 *:focus {
     outline: none;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }
 
 .parent {
@@ -23,17 +30,17 @@ body {
 
 #quote-bg {
   position: relative;
-  background-color: white;
-  width: 500px;
+  background: url(quote.png) no-repeat white;
+  width: 420px;
   min-height: 150px;
-  padding: 4em;
+  padding: 4em 4em 4em 5em;
   margin: 0 auto;
   box-shadow: 0 1px 4px 0 rgba(69, 90, 100, 0.5);
   #quote {
     line-height: 1.6;
     font-size: 26px;
     color: #444B77;
-    margin-top: 1em;
+    margin-top: 2em;
   }
   #author {
     font-size: 14px;
@@ -47,9 +54,9 @@ body {
   background-color: #4A9FD5;
   position: absolute;
   right: -2em;
-  top: 1em;
+  top: 1.5em;
   height: 50px;
-  width: 150px;
+  width: 160px;
   #tweet {
     background-color: #41404E;
     position: relative;
@@ -57,11 +64,16 @@ body {
     left: 0.5em;
     padding: 15px;
     box-shadow: 0 1px 4px 0 rgba(69, 90, 100, 0.5);
+    @include transition(all .2s ease-in-out);
     i {
       color: white;
+      @include transition(all .2s ease-in-out);
     }
     &:hover {
       box-shadow: 0 1px 14px 0 rgba(69, 90, 100, 0.5);
+      > i {
+        color: #efefef;
+      }
     }
   }
   button#newQuote {
@@ -71,11 +83,14 @@ body {
     color: #2172a6;
     font-size: 12px;
     font-weight: bold;
-    margin-top: 13px;
-    margin-right: 6px;
+    position: relative;
+    top: 14px;
+    right: 15px;
     text-shadow: 0px 1px 1px #6fbdef;
+    @include transition(all .2s ease-in-out);
     &:hover {
-      color: #115e90;
+      color: #fff;
+      text-shadow: none;
     }
   }
 }
