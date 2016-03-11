@@ -8,25 +8,34 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="Jami Gibbs">
 
-  <link rel="stylesheet" href="css/<style></style>.css?v=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
+
 <body>
 
-  <div id="quoteWrap">
+  <section class="parent">
+    <div class="child">
 
-    <div id="quote"></div>
-    <div id="author"></div>
+      <div id="quote-bg">
 
-    <button id="newQuote">New Quote</button>
+        <div id="buttons">
+          <a id="tweet" onclick="twitterShare()" href="" target="_blank"><i class="fa fa-twitter fa-lg"></i> </a>
+          <button id="newQuote">New Quote</button>
+        </div>
 
-    <a id="tweet" class="button" onclick="twitterShare()" href="" target="_blank">Tweet</a>
+        <div id="quote"></div>
+        <div id="author"></div>
 
-  </div>
+      </div>
+    </div>
+  </section>
 
   <script src="scripts.js"></script>
 </body>

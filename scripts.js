@@ -4,10 +4,12 @@ window.onload = quoteGenerator();
 // The callback function to parse the data
 function parseResponse(data) {
   document.getElementById("quote").innerHTML = data.quoteText;
-  document.getElementById("author").innerHTML = data.quoteAuthor;
+  if(data.quoteAuthor){
+    document.getElementById("author").innerHTML = '- ' + data.quoteAuthor;
+  }
 }
 
-// TODO: Take the quote key out of the global namespace someway somehow
+// TODO: Take this out of the global namespace someway somehow
 var key;
 
 function quoteGenerator() {
@@ -48,7 +50,7 @@ function twitterShare(){
   var tweetAnchor = document.getElementById("tweet");
   var currentQuote = document.getElementById("quote").innerHTML;
   var currentQuoteAuthor = document.getElementById("author").innerHTML;
-  var twitterShareUrl = 'https://twitter.com/share?&text=' + currentQuote + ' - ' + currentQuoteAuthor;
+  var twitterShareUrl = 'https://twitter.com/share?&text=' + currentQuote + ' ' + currentQuoteAuthor;
 
   // Add the current quote to the Twitter share link
   tweetAnchor.setAttribute('href', twitterShareUrl);
