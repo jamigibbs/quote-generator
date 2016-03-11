@@ -1,0 +1,24 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin bp-large {
+  @media only screen and (min-width: 64.063em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}

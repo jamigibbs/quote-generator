@@ -1,21 +1,29 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Defaults
+2.0 Quote
+  2.1 Buttons
+--------------------------------------------------------------*/
+
+@import 'mixins';
+@import 'functions';
+%merriweather { font-family: 'Merriweather', serif; }
+
+/*--------------------------------------------------------------
+  1.0 Defaults
+--------------------------------------------------------------*/
 html, body {
     height: 100%;
 }
 body {
-  font-family: 'Merriweather', serif;
-  background: #8e9eab; /* fallback for old browsers */
+  @extend %merriweather;
+  background: #D8E9F0; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #D8E9F0 , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #D8E9F0 , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 *:focus {
     outline: none;
-}
-
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -o-transition: $args;
-  transition: $args;
 }
 
 .parent {
@@ -28,14 +36,20 @@ body {
   }
 }
 
+/*--------------------------------------------------------------
+	2.0 Quote
+--------------------------------------------------------------*/
 #quote-bg {
+  background: white;
   position: relative;
-  background: url('../img/quote.png') white no-repeat;
   width: 420px;
-  min-height: 150px;
+  min-height: 200px;
   padding: 4em 4em 4em 5em;
   margin: 0 auto;
   box-shadow: 0 1px 4px 0 rgba(69, 90, 100, 0.5);
+  @include bp-small {
+    width: 225px;
+  };
   #quote {
     line-height: 1.6;
     font-size: 26px;
@@ -50,6 +64,10 @@ body {
   }
 }
 
+
+/*--------------------------------------------------------------
+  2.1 Quote: Buttons
+--------------------------------------------------------------*/
 #buttons {
   background-color: #4A9FD5;
   position: absolute;
@@ -57,40 +75,37 @@ body {
   top: 1.5em;
   height: 50px;
   width: 160px;
+  @include bp-small {
+    right: 0;
+  };
   #tweet {
-    background-color: #41404E;
+    background-color: white;
     position: relative;
-    top: 5px;
+    top: 0px;
     left: 0.5em;
-    padding: 15px;
+    padding: 20px 12px 10px 12px;
     box-shadow: 0 1px 4px 0 rgba(69, 90, 100, 0.5);
     @include transition(all .2s ease-in-out);
-    i {
-      color: white;
-      @include transition(all .2s ease-in-out);
-    }
-    &:hover {
-      box-shadow: 0 1px 14px 0 rgba(69, 90, 100, 0.5);
-      > i {
-        color: #efefef;
-      }
+    img {
+      width: 25px;
     }
   }
   button#newQuote {
     float: right;
-    background-color: #4A9FD5;
+    background-color: #54a6db;
     border: none;
-    color: #2172a6;
+    color: white;
     font-size: 12px;
-    font-weight: bold;
     position: relative;
     top: 14px;
     right: 15px;
-    text-shadow: 0px 1px 1px #6fbdef;
+    text-shadow: 0px 1px 1px #2c83bb;
     @include transition(all .2s ease-in-out);
     &:hover {
-      color: #fff;
-      text-shadow: none;
+      background-color: #5caee2;
+    }
+    &:active {
+      top: 16px;
     }
   }
 }
