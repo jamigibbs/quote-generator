@@ -4,6 +4,7 @@
 1.0 Defaults
 2.0 Quote
   2.1 Buttons
+3.0 Footer
 --------------------------------------------------------------*/
 
 @import 'mixins';
@@ -107,6 +108,24 @@ body {
     }
     &:active {
       top: 16px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+  3.0 Footer
+--------------------------------------------------------------*/
+#footer {
+  text-align: center;
+  color: #C2CBD4;
+  font-size: 14px;
+  margin-top: 3em;
+  a {
+    color: #C2CBD4;
+    text-decoration: none;
+    @include transition(all .2s ease-in-out);
+    &:hover {
+      color: #4A9FD5;
     }
   }
 }

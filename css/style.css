@@ -4,6 +4,7 @@
 1.0 Defaults
 2.0 Quote
   2.1 Buttons
+3.0 Footer
 --------------------------------------------------------------*/
 /* Slightly darken a color
  @param {Color} $color - color to shade
@@ -108,5 +109,23 @@ body {
       background-color: #5caee2; }
     #buttons button#newQuote:active {
       top: 16px; }
+
+/*--------------------------------------------------------------
+  3.0 Footer
+--------------------------------------------------------------*/
+#footer {
+  text-align: center;
+  color: #C2CBD4;
+  font-size: 14px;
+  margin-top: 3em; }
+  #footer a {
+    color: #C2CBD4;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    #footer a:hover {
+      color: #4A9FD5; }
 
 /*# sourceMappingURL=style.css.map */
