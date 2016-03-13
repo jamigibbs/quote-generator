@@ -2,6 +2,10 @@
 
 Just a simple generator of quotes with Twitter share.
 
+![preview](preview.jpg)
+
+### Local Setup
+
 ```
 sass --watch scss/style.scss:css/style.css
 ```
